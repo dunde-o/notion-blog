@@ -4,3 +4,5 @@ export const isEmpty = (value: unknown) => {
   }
   return value == null;
 };
+
+export const isAllNotEmpty = (array: unknown[]) => !array.some(isEmpty);
