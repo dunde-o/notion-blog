@@ -11,7 +11,7 @@ const envKeys = file
   .filter((line) => line[0] !== '#')
   .map((line) => line.split('=')[0]);
 
-const data = envKeys.reduce((prev, key) => prev + `${TAB}${key}?: string;\n`, 'interface Env {\n') + '}\n';
+const data = envKeys.reduce((prev, key) => prev + `${TAB}${key}: string;\n`, 'interface Env {\n') + '}\n';
 
 writeFileSync(path.resolve(__dirname, '../src/types/env.d.ts'), data);
 
