@@ -8,10 +8,14 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "front/**", "back/**", "common/**"
+      "front/**",
+      "back/**",
+      "shared/**"
     ]
   },
   "scripts": {
-    "start:dev": "yarn workspace front dev&&yarn workspace back start:dev"
+    "shared:update": "yarn workspace @local/shared tsc",
+    "start:back:dev": "yarn workspace @local/back start:dev",
+    "start:front:dev": "yarn workspace @local/front dev"
   }
 }
