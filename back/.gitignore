@@ -36,3 +36,4 @@ lerna-debug.log*
 
 # environment setting
 env/*.env
+src/types/env.d.ts
