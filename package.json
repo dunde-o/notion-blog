@@ -1,0 +1,17 @@
+{
+  "name": "notion-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Dunde1/notion-blog.git",
+  "author": "dunde <chldlsrb1000@naver.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "front/**", "back/**", "common/**"
+    ]
+  },
+  "scripts": {
+    "start:dev": "yarn workspace front dev&&yarn workspace back start:dev"
+  }
+}
