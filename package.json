@@ -15,7 +15,9 @@
   },
   "scripts": {
     "shared:update": "yarn workspace @local/shared tsc",
+    "start:back": "yarn workspace @local/back start",
     "start:back:dev": "yarn workspace @local/back start:dev",
+    "start:front": "yarn workspace @local/front start",
     "start:front:dev": "yarn workspace @local/front dev"
   }
 }
