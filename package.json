@@ -14,10 +14,10 @@
     ]
   },
   "scripts": {
-    "shared:update": "yarn workspace @local/shared tsc",
-    "start:back": "yarn workspace @local/back start",
-    "start:back:dev": "yarn workspace @local/back start:dev",
-    "start:front": "yarn workspace @local/front start",
-    "start:front:dev": "yarn workspace @local/front dev"
+    "shared-update": "yarn workspace @local/shared tsc",
+    "back-start": "yarn workspace @local/back start",
+    "back-start:dev": "yarn workspace @local/back start:dev",
+    "front-start": "yarn workspace @local/front start",
+    "front-start:dev": "yarn workspace @local/front dev"
   }
 }
