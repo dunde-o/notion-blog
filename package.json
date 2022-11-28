@@ -11,6 +11,10 @@
       "front/**",
       "back/**",
       "shared/**"
+    ],
+    "nohoist": [
+      "**/@notionhq",
+      "**/@notionhq/**"
     ]
   },
   "scripts": {
