@@ -2,7 +2,7 @@ import { Logger, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { getMongooseRootUrl } from '@src/settings/database';
+import { getMongooseRootUrl } from '@src/utils/database';
 import { LoggerMiddleware } from '@src/logger/logger.middleware';
 
 @Module({
@@ -11,7 +11,7 @@ import { LoggerMiddleware } from '@src/logger/logger.middleware';
   providers: [AppService, Logger],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer): any {
+  configure(consumer: MiddlewareConsumer): void {
     consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }
