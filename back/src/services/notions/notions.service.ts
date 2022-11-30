@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { notionClient, notionSecret } from '@src/utils/notion';
-import { NotionResponseDto } from '@src/notions/dto/notionResponse.dto';
+import { NotionResponseDto } from '@services/notions/dto/notionResponse.dto';
 
 @Injectable()
 export class NotionsService {

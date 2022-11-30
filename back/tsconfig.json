@@ -18,6 +18,15 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@filters/*": [
+        "src/filters/*"
+      ],
+      "@middlewares/*": [
+        "src/middlewares/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
       "@src/*": [
         "src/*"
       ]

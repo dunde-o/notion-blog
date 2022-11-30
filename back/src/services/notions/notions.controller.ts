@@ -1,6 +1,6 @@
-import { Controller, Get, Query } from '@nestjs/common';
-import { NotionsService } from '@src/notions/notions.service';
-import { NotionResponseDto } from '@src/notions/dto/notionResponse.dto';
+import { Controller, Get, Query, UseFilters } from '@nestjs/common';
+import { NotionsService } from '@services/notions/notions.service';
+import { NotionResponseDto } from '@services/notions/dto/notionResponse.dto';
 
 @Controller('notions')
 export class NotionsController {

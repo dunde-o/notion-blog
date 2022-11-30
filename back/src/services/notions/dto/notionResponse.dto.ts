@@ -1,4 +1,4 @@
-import { NotionPageDto } from '@src/notions/dto/notionPage.dto';
+import { NotionPageDto } from '@services/notions/dto/notionPage.dto';
 import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionPages } from '@local/shared/dist/types/models/notion';
 
