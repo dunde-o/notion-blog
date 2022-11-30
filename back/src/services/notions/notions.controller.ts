@@ -1,4 +1,4 @@
-import { Controller, Get, Query, UseFilters } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { NotionsService } from '@services/notions/notions.service';
 import { NotionResponseDto } from '@services/notions/dto/notionResponse.dto';
 
