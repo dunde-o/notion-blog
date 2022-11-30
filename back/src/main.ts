@@ -13,7 +13,7 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalInterceptors(new HttpInterceptor());
   setupSwagger(app);
-  await app.listen(3000);
+  await app.listen(8000);
 }
 
 bootstrap();
