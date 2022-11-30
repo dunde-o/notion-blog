@@ -8,10 +8,20 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "front/**", "back/**", "common/**"
+      "front/**",
+      "back/**",
+      "shared/**"
+    ],
+    "nohoist": [
+      "**/@notionhq",
+      "**/@notionhq/**"
     ]
   },
   "scripts": {
-    "start:dev": "yarn workspace front dev&&yarn workspace back start:dev"
+    "shared-update": "yarn workspace @local/shared tsc",
+    "back-start": "yarn workspace @local/back start",
+    "back-start:dev": "yarn workspace @local/back start:dev",
+    "front-start": "yarn workspace @local/front start",
+    "front-start:dev": "yarn workspace @local/front dev"
   }
 }

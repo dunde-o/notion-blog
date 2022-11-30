@@ -16,23 +16,6 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "@filters/*": [
-        "src/filters/*"
-      ],
-      "@middlewares/*": [
-        "src/middlewares/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@interceptors/*": [
-        "src/interceptors/*"
-      ],
-      "@src/*": [
-        "src/*"
-      ]
-    }
+    "noFallthroughCasesInSwitch": false
   }
 }
