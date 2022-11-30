@@ -27,6 +27,9 @@
       "@services/*": [
         "src/services/*"
       ],
+      "@interceptors/*": [
+        "src/interceptors/*"
+      ],
       "@src/*": [
         "src/*"
       ]
