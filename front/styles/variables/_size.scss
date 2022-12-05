@@ -1,0 +1,9 @@
+//$screen-sizes: 480px, 720px, 1080px, 1440px, 1920px;
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+//default body size
+$screen-mobile: $breakpoint-mobile;
+$screen-tablet: $breakpoint-tablet;
+$screen-desktop: $breakpoint-desktop;

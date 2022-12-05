@@ -1,0 +1,21 @@
+@import "../utils";
+
+@include dark-mode {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background-color: black;
+  }
+}
+
+@include light-mode {
+  html {
+    color-scheme: light;
+  }
+  body {
+    color: black;
+    background-color: white;
+  }
+}
