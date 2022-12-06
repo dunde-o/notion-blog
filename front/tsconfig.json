@@ -22,11 +22,8 @@
       "@components/*": [
         "components/*"
       ],
-      "@utils/*": [
-        "utils/*"
-      ],
-      "@styles/*": [
-        "styles/*"
+      "@common/*": [
+        "common/*"
       ]
     }
   },
