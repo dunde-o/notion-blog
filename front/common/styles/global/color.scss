@@ -1,21 +1,26 @@
 @import "../utils";
 
-@include dark-mode {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background-color: black;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-mode: dark;
+    --font-color_default: white;
+    --background-color_default: black;
   }
 }
 
-@include light-mode {
-  html {
-    color-scheme: light;
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme-mode: light;
+    --font-color_default: black;
+    --background-color_default: white;
   }
-  body {
-    color: black;
-    background-color: white;
-  }
+}
+
+html {
+  color-scheme: var(--theme-mode);
+}
+
+body {
+  color: var(--font-color_default);
+  background-color: var(--background-color_default);
 }
