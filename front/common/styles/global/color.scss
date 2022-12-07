@@ -1,18 +1,21 @@
 @import "../utils";
+@import "../variables";
 
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-mode: dark;
-    --font-color_default: white;
-    --background-color_default: black;
+    --font-color_default: #{$dark--font-color_default};
+    --background-color_default: #{$dark--background-color_default};
+    --background-color_gradiant: linear-gradient(45deg, #{$dark--background-color_gradiant-bottom}, #{$dark--background-color_gradiant-top})
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --theme-mode: light;
-    --font-color_default: black;
-    --background-color_default: white;
+    --font-color_default: #{$light--font-color_default};
+    --background-color_default: #{$light--background-color_default};
+    --background-color_gradiant: linear-gradient(45deg, #{$light--background-color_gradiant-bottom}, #{$light--background-color_gradiant-top});
   }
 }
 
@@ -22,5 +25,5 @@ html {
 
 body {
   color: var(--font-color_default);
-  background-color: var(--background-color_default);
+  background: var(--background-color_gradiant);
 }
