@@ -2,18 +2,30 @@
 @import "../variables";
 
 @include mobile {
+  :root {
+    --body--width: #{$screen-mobile};
+  }
+
   body {
     width: $screen-mobile;
   }
 }
 
 @include tablet {
+  :root {
+    --body--width: #{$screen-tablet};
+  }
+
   body {
     width: $screen-tablet;
   }
 }
 
 @include desktop {
+  :root {
+    --body--width: #{$screen-desktop};
+  }
+
   body {
     width: $screen-desktop;
   }
