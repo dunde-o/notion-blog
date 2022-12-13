@@ -7,26 +7,18 @@ $width-lg: 165px;
 $height-sm: $font-size-sm + 5px;
 $height-lg: $font-size-lg + 5px;
 
-.dark {
-  --logo--font-color: #{$dark--font-color_default} !important;
-}
-
-.light {
-  --logo--font-color: #{$light--font-color_default} !important;
-}
-
 .Logo {
-  --logo--font-color: var(--font-color_default);
-
   @include flex();
 
   font-family: 'Jalnan', sans-serif;
   font-weight: bolder;
   font-size: $font-size-sm;
-  color: var(--logo--font-color);
+  color: var(--font-color_default);
   width: $width-sm;
   height: $height-sm;
   user-select: none;
+
+  @include font-mode;
 }
 
 @include mobile {
