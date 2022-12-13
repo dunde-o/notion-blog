@@ -1,3 +1,5 @@
+import { Mode } from '@common/types/Mode';
+
 export interface LogoProps {
-  mode?: 'dark' | 'light';
+  mode?: Mode;
 }
