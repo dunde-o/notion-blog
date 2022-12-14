@@ -1,7 +1,11 @@
-import '@common/styles/index.scss';
+import "@common/styles/index.scss";
+import { RouterContext } from "next/dist/shared/lib/router-context";
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
+  nextRouter: {
+    Provider: RouterContext.Provider,
+  },
+  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
