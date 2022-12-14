@@ -1,0 +1,12 @@
+@import "~@common/styles/utils";
+
+.Navigator {
+  @include flex(row, space-between, center);
+  width: var(--body--width);
+}
+
+.NavLeft {
+}
+
+.NavRight {
+}
