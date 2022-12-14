@@ -1,19 +1,20 @@
-import React from 'react';
-import Logo from '@components/atoms/Logo/Logo';
-import { NavLogoProps } from './NavLogo.type';
-import Link from 'next/link';
-import { DEFAULT_PATH } from '@common/constants/path';
-import styles from './NavLogo.module.scss';
+import React from "react";
+import { Logo, RouterButton } from "@components/atoms";
+import { NavLogoProps } from "./NavLogo.type";
+import styles from "./NavLogo.module.scss";
+import { DEFAULT_PATH } from "@common/constants/path";
 
 const NavLogo: React.FC<NavLogoProps> = (props) => {
   const { mode } = props;
   return (
-    <Link href={DEFAULT_PATH} className={styles.NavLogo}>
-      <Logo mode={mode} />
-    </Link>
+    <span className={styles.NavLogo}>
+      <RouterButton path={DEFAULT_PATH}>
+        <Logo mode={mode} />
+      </RouterButton>
+    </span>
   );
 };
 
-NavLogo.displayName = 'NavLogo';
+NavLogo.displayName = "NavLogo";
 
 export default NavLogo;
