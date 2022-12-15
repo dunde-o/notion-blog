@@ -1,12 +1,53 @@
 @import "~@common/styles/utils";
 
 .Navigator {
+  position: fixed;
+  top: 0;
+
   @include flex(row, space-between, center);
+
   width: var(--body--width);
+  border-bottom: 1px var(--font-color_default) solid;
+  backdrop-filter: blur(8px) invert(5%);
 }
 
-.NavLeft {
+.NavLeft, .NavRight {
+  @include flex(column, flex-end, center);
+  height: 100%;
 }
 
-.NavRight {
+@include mobile {
+  .Navigator {
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+
+  .NavLeft, .NavRight {
+    @include flex();
+  }
+}
+
+@include tablet {
+  .Navigator {
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 40px;
+  }
+
+  .NavLeft, .NavRight {
+    padding-bottom: 25px;
+  }
+}
+
+@include desktop {
+  .Navigator {
+    height: 100px;
+    padding-left: 25px;
+    padding-right: 50px;
+  }
+
+  .NavLeft, .NavRight {
+    padding-bottom: 25px;
+  }
 }
