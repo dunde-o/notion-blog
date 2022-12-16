@@ -3,30 +3,21 @@
 
 @include mobile {
   :root {
-    --body--width: #{$screen-mobile};
-  }
-
-  body {
-    width: $screen-mobile;
+    --screen--width: #{$screen-mobile};
+    --navigator--height: 50px;
   }
 }
 
 @include tablet {
   :root {
-    --body--width: #{$screen-tablet};
-  }
-
-  body {
-    width: $screen-tablet;
+    --screen--width: #{$screen-tablet};
+    --navigator--height: 100px;
   }
 }
 
 @include desktop {
   :root {
-    --body--width: #{$screen-desktop};
-  }
-
-  body {
-    width: $screen-desktop;
+    --screen--width: #{$screen-desktop};
+    --navigator--height: 100px;
   }
 }
