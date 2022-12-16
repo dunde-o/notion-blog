@@ -1,4 +1,5 @@
-import { NavLogoProps } from '@components/molecules/NavLogo/NavLogo.type';
+import { NavLogoProps } from "@components/molecules/NavLogo/NavLogo.type";
 
-export interface NavLeftProps extends NavLogoProps {
+export interface NavigatorProps extends NavLogoProps {
+  position: "fixed" | "absolute";
 }

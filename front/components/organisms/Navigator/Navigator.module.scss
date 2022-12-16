@@ -1,14 +1,22 @@
 @import "~@common/styles/utils";
 
-.Navigator {
-  position: fixed;
-  top: 0;
+.isAbsolute {
+  position: absolute;
+}
 
+.isFixed {
+  position: fixed;
+  backdrop-filter: blur(8px) invert(5%);
+}
+
+.Navigator {
+  top: 0;
+  box-sizing: border-box;
   @include flex(row, space-between, center);
 
-  width: var(--body--width);
+  width: 100%;
+  height: var(--navigator--height);
   border-bottom: 1px var(--font-color_default) solid;
-  backdrop-filter: blur(8px) invert(5%);
 }
 
 .NavLeft, .NavRight {
@@ -18,7 +26,6 @@
 
 @include mobile {
   .Navigator {
-    height: 50px;
     padding-left: 10px;
     padding-right: 20px;
   }
@@ -30,7 +37,6 @@
 
 @include tablet {
   .Navigator {
-    height: 100px;
     padding-left: 20px;
     padding-right: 40px;
   }
@@ -42,7 +48,6 @@
 
 @include desktop {
   .Navigator {
-    height: 100px;
     padding-left: 25px;
     padding-right: 50px;
   }
