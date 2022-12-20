@@ -1,0 +1,12 @@
+@import "~@common/styles/utils";
+
+.Banner {
+  @include flex();
+
+  height: 100vh;
+  padding-top: var(--navigator--height);
+  color: var(--font-color_default);
+  font-family: 'BMHANNAPro', sans-serif;
+  font-size: 70px;
+  text-align: end;
+}
