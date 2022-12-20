@@ -1,5 +1,11 @@
 @font-face {
   font-family: 'Jalnan';
-  src: url('/assets/fonts/Jalnan.ttf') format('ttf'),
-  url('/assets/fonts/JalnanOTF.otf') format('opentype');
+  src: url('/assets/fonts/Jalnan/Jalnan.ttf') format('ttf'),
+  url('/assets/fonts/Jalnan/JalnanOTF.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'BMHANNAPro';
+  src: url('/assets/fonts/BMHANNAPro/BMHANNAPro.ttf') format('ttf'),
+  url('/assets/fonts/BMHANNAPro/BMHANNAProOTF.otf') format('opentype');
 }
