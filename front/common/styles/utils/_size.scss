@@ -17,3 +17,10 @@
     @content;
   }
 }
+
+@mixin ellipsis($width: 100%) {
+  width: #{$width};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
