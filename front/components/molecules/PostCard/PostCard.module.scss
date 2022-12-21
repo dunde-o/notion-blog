@@ -1,0 +1,85 @@
+@import "~@common/styles/utils";
+
+.PostCard {
+  --card--border-size: 1px;
+
+  --card--gap: 10px;
+  --card--white-space: 10px;
+  --card--radius: 10px;
+  --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
+  --card-image--size: 50px;
+  --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
+  --card-info-title--font-size: 22px;
+  --card-info-description--font-size: 15px;
+
+  @include flex(row, flex-start, center);
+  box-sizing: border-box;
+  border: var(--font-color_default) var(--card--border-size) solid;
+  gap: var(--card--white-space);
+  padding: var(--card--white-space);
+  border-radius: var(--card--radius);
+  width: var(--card--width);
+}
+
+.image {
+  width: var(--card-image--size);
+  height: var(--card-image--size);
+}
+
+.info {
+  @include flex(column, center, flex-start);
+  gap: calc(var(--card--white-space) / 2);
+  width: var(--card-info--width);
+}
+
+.title {
+  @include ellipsis();
+  font-family: 'BMJUA', sans-serif;
+  font-size: var(--card-info-title--font-size);
+  border-bottom: var(--font-color_default) 1px solid;
+}
+
+.description {
+  @include ellipsis();
+  font-family: 'KyoboHandwriting', sans-serif;
+  font-size: var(--card-info-description--font-size);
+}
+
+@include mobile {
+  .PostCard {
+    --card--gap: 10px;
+    --card--white-space: 10px;
+    --card--radius: 10px;
+    --card--width: calc(var(--screen--width) - var(--card--gap));
+    --card-image--size: 50px;
+    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
+    --card-info-title--font-size: 22px;
+    --card-info-description--font-size: 15px;
+  }
+}
+
+@include tablet {
+  .PostCard {
+    --card--gap: 10px;
+    --card--white-space: 10px;
+    --card--radius: 10px;
+    --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
+    --card-image--size: 50px;
+    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
+    --card-info-title--font-size: 22px;
+    --card-info-description--font-size: 15px;
+  }
+}
+
+@include desktop {
+  .PostCard {
+    --card--gap: 10px;
+    --card--white-space: 10px;
+    --card--radius: 10px;
+    --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
+    --card-image--size: 50px;
+    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
+    --card-info-title--font-size: 22px;
+    --card-info-description--font-size: 15px;
+  }
+}
