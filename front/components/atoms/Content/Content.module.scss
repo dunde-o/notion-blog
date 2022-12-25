@@ -1,0 +1,18 @@
+@import "~@common/styles/utils";
+
+.Content {
+  --content--width: 'auto';
+  --content--height: 'auto';
+}
+
+.vertical {
+  @include flex(column, center, center);
+  width: var(--content--width);
+  height: fit-content;
+}
+
+.horizontal {
+  @include flex(row, center, center);
+  width: fit-content;
+  height: var(--content--height);
+}
