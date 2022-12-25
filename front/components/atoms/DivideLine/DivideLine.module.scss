@@ -1,0 +1,23 @@
+.DivideLine {
+  --divide-line--white-space: 0;
+  --divide-line--thick: 1px;
+  --divide-line--length: 100%;
+
+  background-color: var(--font-color_default);
+}
+
+.vertical {
+  margin: 0 var(--divide-line--white-space);
+  width: var(--divide-line--thick);
+  min-width: var(--divide-line--thick);
+  height: var(--divide-line--length);
+  min-height: var(--divide-line--length);
+}
+
+.horizontal {
+  margin: var(--divide-line--white-space) 0;
+  width: var(--divide-line--length);
+  min-width: var(--divide-line--length);
+  height: var(--divide-line--thick);
+  min-height: var(--divide-line--thick);
+}
