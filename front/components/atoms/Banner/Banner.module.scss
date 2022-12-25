@@ -1,9 +1,11 @@
 @import "~@common/styles/utils";
 
 .Banner {
+  --banner--height: calc(100vh - var(--navigator--height));
   @include flex();
 
-  height: 100vh;
+  height: var(--banner--height);
+  min-height: var(--banner--height);
   padding-top: var(--navigator--height);
   color: var(--font-color_default);
   font-family: 'BMHANNAPro', sans-serif;
