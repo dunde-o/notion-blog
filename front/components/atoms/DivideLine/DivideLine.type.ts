@@ -1,5 +1,7 @@
+import { Direction } from "@common/types/Direction";
+
 export interface DivideLineProps {
-  direction?: "vertical" | "horizontal";
+  direction?: Direction;
   margin?: number;
   thick?: number;
   length?: number | string;
