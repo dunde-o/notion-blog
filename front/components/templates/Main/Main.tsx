@@ -2,15 +2,29 @@ import React from "react";
 import { MainProps } from "./Main.type";
 import styles from "./Main.module.scss";
 import { Navigator } from "@components/organisms";
-import { Banner } from "@components/atoms";
+import { Banner, Content, DivideLine } from "@components/atoms";
+import PostPreview from "@components/organisms/PostPreview/PostPreview";
+import { DivideLineProps } from "@components/atoms/DivideLine/DivideLine.type";
 
 const Main: React.FC<MainProps> = (props) => {
-  const { bannerMessage } = props;
+  const { bannerMessage, data } = props;
   const { navRef, navPosition, scrollHandler } = Navigator.useNavigatorScroll();
+
+  const divideLineProps: DivideLineProps = {
+    direction: "horizontal",
+    margin: 50,
+    thick: 1,
+  };
+
   return (
     <main onScroll={scrollHandler} className={styles.Main}>
       <Navigator ref={navRef} position={navPosition} />
-      <Banner message={bannerMessage} />
+      <Content>
+        <Banner message={bannerMessage} />
+        <DivideLine {...divideLineProps} />
+        <PostPreview data={data} />
+        <DivideLine {...divideLineProps} />
+      </Content>
     </main>
   );
 };
