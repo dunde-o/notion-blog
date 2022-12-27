@@ -3,7 +3,7 @@ import { PostCardProps } from "./PostCard.type";
 import styles from "./PostCard.module.scss";
 import { RouterButton } from "@components/atoms";
 import Image from "next/image";
-import { IMG_SIZE } from "@common/constants/image";
+import { IMG_SIZES } from "@common/constants/image";
 
 const PostCard: React.FC<PostCardProps> = (props) => {
   const { path, data } = props;
@@ -15,7 +15,7 @@ const PostCard: React.FC<PostCardProps> = (props) => {
           className={styles.image}
           src={iconImgUrl}
           alt={pageHead.title}
-          {...IMG_SIZE.SMALL}
+          {...IMG_SIZES.SMALL}
         />
         <div className={styles.info}>
           <span className={styles.title}>{pageHead.title}</span>
