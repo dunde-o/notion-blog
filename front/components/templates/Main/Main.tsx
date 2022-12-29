@@ -1,9 +1,8 @@
 import React from "react";
 import { MainProps } from "./Main.type";
 import styles from "./Main.module.scss";
-import { Navigator } from "@components/organisms";
+import { Navigator, PostPreview } from "@components/organisms";
 import { Banner, Content, DivideLine } from "@components/atoms";
-import PostPreview from "@components/organisms/PostPreview/PostPreview";
 import { DivideLineProps } from "@components/atoms/DivideLine/DivideLine.type";
 
 const Main: React.FC<MainProps> = (props) => {
