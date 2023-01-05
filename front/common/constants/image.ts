@@ -21,6 +21,8 @@ export const IMG_INFOS = {
   NOT_FOUND: { fileName: "not_found.png", description: "not found image" },
   SAMPLE: { fileName: "sample.jpeg", description: "sample image" },
   SETTING: { fileName: "setting.png", description: "setting image" },
+  GITHUB: { fileName: "github.png", description: "github icon image" },
+  CLOSE_X: { fileName: "close_x.svg", description: "close button image" },
 };
 
 export const IMG_PATHS: Record<keyof typeof IMG_INFOS, string> = Object.entries(
