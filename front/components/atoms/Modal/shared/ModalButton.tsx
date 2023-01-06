@@ -7,6 +7,7 @@ const ModalButton: React.FC<ModalButtonProps> = (props) => {
     children,
     initOpenState,
     modalProps: { onClose, ...rest },
+    modalChildren,
   } = props;
   const [isOpen, setIsOpen] = useState(initOpenState ?? false);
 
@@ -18,7 +19,11 @@ const ModalButton: React.FC<ModalButtonProps> = (props) => {
   return (
     <>
       <button onClick={() => setIsOpen(true)}>{children}</button>
-      {isOpen ? <Modal {...rest} onClose={handleModalClose} /> : null}
+      {isOpen ? (
+        <Modal {...rest} onClose={handleModalClose}>
+          {modalChildren}
+        </Modal>
+      ) : null}
     </>
   );
 };

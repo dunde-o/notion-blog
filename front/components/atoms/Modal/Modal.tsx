@@ -72,6 +72,4 @@ const Modal: React.FC<ModalProps> = (props) => {
 
 Modal.displayName = "Modal";
 
-Object.assign(Modal, { ModalButton });
-
-export default Modal;
+export default Object.assign(Modal, { ModalButton });
