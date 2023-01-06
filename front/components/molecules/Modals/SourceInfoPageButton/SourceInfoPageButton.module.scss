@@ -1,0 +1,27 @@
+@import "~@common/styles/utils";
+
+.Page {
+  div {
+    @include flex(row, flex-start);
+    gap: 20px;
+    word-break: break-all;
+    margin: 0 0 20px 5px;
+  }
+
+  a {
+    color: #0070f3;
+  }
+}
+
+.images {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.fonts {
+  span {
+    font-size: 14px;
+  }
+}
