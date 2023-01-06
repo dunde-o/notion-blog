@@ -15,6 +15,8 @@ export interface CheckModalProps {
   onNoClick: MouseEventHandler;
 }
 
+export type ModalTypeProps = PageModalProps | AlertModalProps | CheckModalProps;
+
 export interface CommonModalProps {
   options?: {
     background?: boolean;
@@ -23,8 +25,6 @@ export interface CommonModalProps {
   title?: string;
   onClose?: MouseEventHandler;
   children?: ReactNode;
-  buttonChildren: ReactNode;
 }
 
-export type ModalProps = CommonModalProps &
-  (PageModalProps | AlertModalProps | CheckModalProps);
+export type ModalProps = CommonModalProps & ModalTypeProps;

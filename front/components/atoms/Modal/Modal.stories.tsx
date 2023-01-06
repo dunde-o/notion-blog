@@ -8,7 +8,6 @@ export default {
   args: {
     title: "Modal title",
     children: "Modal description",
-    buttonChildren: "open modal",
   },
 } as ComponentMeta<typeof Modal>;
 

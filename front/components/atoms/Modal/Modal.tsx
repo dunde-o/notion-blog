@@ -1,29 +1,22 @@
-import React, { MouseEventHandler, ReactNode, useState } from "react";
+import React, { MouseEventHandler, ReactNode } from "react";
 import { ModalProps } from "./Modal.type";
 import styles from "./Modal.module.scss";
 import classNames from "classnames";
 import { DivideLine } from "@components/atoms";
 import Image from "next/image";
 import { IMG_PROPS, IMG_SIZES } from "@common/constants/image";
+import ModalButton from "./shared/ModalButton";
 
 const Modal: React.FC<ModalProps> = (props) => {
-  const { type, options, title, onClose, children, buttonChildren } = props;
-  const [isOpen, setIsOpen] = useState(false);
+  const { type, options, title, onClose, children } = props;
 
-  const createHandleClose =
+  const createHandleEvent =
     (event?: MouseEventHandler) => (e: React.MouseEvent) => {
       event?.(e);
-      setIsOpen(false);
+      onClose?.(e);
     };
 
-  const handleModalClose = createHandleClose(onClose);
-
-  const buttonComponent = (modal: ReactNode) => (
-    <>
-      <button onClick={() => setIsOpen(true)}>{buttonChildren}</button>
-      {isOpen ? modal : null}
-    </>
-  );
+  const handleModalClose = createHandleEvent();
 
   const wrapComponent = (foot?: ReactNode) => (
     <div
@@ -57,26 +50,28 @@ const Modal: React.FC<ModalProps> = (props) => {
   if (type === "alert") {
     const foot = (
       <div className={styles.foot}>
-        <button onClick={createHandleClose(props.onCheckClick)}>확인</button>
+        <button onClick={createHandleEvent(props.onCheckClick)}>확인</button>
       </div>
     );
 
-    return buttonComponent(wrapComponent(foot));
+    return wrapComponent(foot);
   }
 
   if (type === "check") {
     const foot = (
       <div className={styles.foot}>
-        <button onClick={createHandleClose(props.onYesClick)}>예</button>
-        <button onClick={createHandleClose(props.onNoClick)}>아니오</button>
+        <button onClick={createHandleEvent(props.onYesClick)}>예</button>
+        <button onClick={createHandleEvent(props.onNoClick)}>아니오</button>
       </div>
     );
-    return buttonComponent(wrapComponent(foot));
+    return wrapComponent(foot);
   }
 
-  return buttonComponent(wrapComponent());
+  return wrapComponent();
 };
 
 Modal.displayName = "Modal";
+
+Object.assign(Modal, { ModalButton });
 
 export default Modal;
