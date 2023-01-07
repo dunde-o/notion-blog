@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
-import { Direction } from "@common/types/Direction";
-import { BlockSize } from "@common/types/Size";
+import { Direction } from "@common/types/direction";
+import { BlockSize } from "@common/types/size";
 
 export interface ContentProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {

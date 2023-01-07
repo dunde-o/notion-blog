@@ -1,6 +1,6 @@
 import { UrlObject } from "url";
-import { Mode } from "@common/types/Mode";
-import { Width } from "@common/types/Size";
+import { Mode } from "@common/types/mode";
+import { Width } from "@common/types/size";
 
 export interface TextLinkProps {
   mode?: Mode;

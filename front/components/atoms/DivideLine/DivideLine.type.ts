@@ -1,4 +1,4 @@
-import { Direction } from "@common/types/Direction";
+import { Direction } from "@common/types/direction";
 
 export interface DivideLineProps {
   direction?: Direction;
