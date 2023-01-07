@@ -1,0 +1,44 @@
+@import "~@common/styles/utils";
+
+.Footer {
+  --font-color_default: white;
+
+  @include flex();
+
+  width: 100%;
+  background-color: #555555;
+  cursor: default;
+
+  & > * {
+    width: var(--screen--width);
+  }
+}
+
+.content {
+  @include flex();
+  width: var(--screen--width);
+  gap: 10px;
+}
+
+.list {
+  @include flex();
+  color: var(--font-color_default);
+  margin: 10px 0;
+
+  h4 {
+    margin: 0 0 10px 0;
+  }
+
+  .button {
+    transition: color 0.3s;
+
+    &:hover {
+      color: #0070f3;
+    }
+  }
+}
+
+.description {
+  font-size: 12px;
+  margin-top: 20px;
+}
