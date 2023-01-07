@@ -4,11 +4,12 @@ import styles from "./Content.module.scss";
 import classNames from "classnames";
 
 const Content: React.FC<ContentProps> = (props) => {
-  const { direction = "vertical", size, children } = props;
+  const { direction = "vertical", size, children, className, ...rest } = props;
 
   return (
     <section
-      className={classNames(styles.Content, styles[direction])}
+      {...rest}
+      className={classNames(className, styles.Content, styles[direction])}
       style={
         {
           "--content--width":
