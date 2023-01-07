@@ -8,7 +8,7 @@ import { IMG_PROPS, IMG_SIZES } from "@common/constants/image";
 import ModalButton from "./shared/ModalButton";
 
 const Modal: React.FC<ModalProps> = (props) => {
-  const { type, options, title, onClose, children } = props;
+  const { type, options, title, onClose, children, className, ...rest } = props;
 
   const createHandleEvent =
     (event?: MouseEventHandler) => (e: React.MouseEvent) => {
@@ -20,7 +20,8 @@ const Modal: React.FC<ModalProps> = (props) => {
 
   const wrapComponent = (foot?: ReactNode) => (
     <div
-      className={classNames(styles.Modal, {
+      {...rest}
+      className={classNames(className, styles.Modal, {
         [styles.isTransparent]: options?.background,
       })}
       onClick={handleModalClose}

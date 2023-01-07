@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { ModalButtonProps } from "./ModalButton.type";
 import styles from "./ModalButton.module.scss";
 import Modal from "../Modal";
+import classNames from "classnames";
 
 const ModalButton: React.FC<ModalButtonProps> = (props) => {
   const {
     children,
     initOpenState,
-    modalProps: { onClose, ...rest },
+    modalProps: { onClose, ...modalRest },
     modalChildren,
+    className,
+    ...buttonRest
   } = props;
   const [isOpen, setIsOpen] = useState(initOpenState ?? false);
 
@@ -19,11 +22,15 @@ const ModalButton: React.FC<ModalButtonProps> = (props) => {
 
   return (
     <>
-      <button className={styles.ModalButton} onClick={() => setIsOpen(true)}>
+      <button
+        {...buttonRest}
+        className={classNames(styles.ModalButton, className)}
+        onClick={() => setIsOpen(true)}
+      >
         {children}
       </button>
       {isOpen ? (
-        <Modal {...rest} onClose={handleModalClose}>
+        <Modal {...modalRest} onClose={handleModalClose}>
           {modalChildren}
         </Modal>
       ) : null}
