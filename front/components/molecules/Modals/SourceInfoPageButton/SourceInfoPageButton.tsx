@@ -72,9 +72,10 @@ const Page: React.FC = () => {
 };
 
 const SourceInfoPageButton: React.FC<SourceInfoPageProps> = (props) => {
-  const { children } = props;
+  const { children, ...rest } = props;
   return (
     <Modal.ModalButton
+      {...rest}
       modalProps={{ type: "page", title: "출처 정보" }}
       modalChildren={<Page />}
     >
