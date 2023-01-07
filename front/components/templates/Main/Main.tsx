@@ -1,7 +1,7 @@
 import React from "react";
 import { MainProps } from "./Main.type";
 import styles from "./Main.module.scss";
-import { Navigator, PostPreview } from "@components/organisms";
+import { Footer, Navigator, PostPreview } from "@components/organisms";
 import { Banner, Content, DivideLine } from "@components/atoms";
 import { DivideLineProps } from "@components/atoms/DivideLine/DivideLine.type";
 
@@ -24,6 +24,7 @@ const Main: React.FC<MainProps> = (props) => {
         <PostPreview data={data} />
         <DivideLine {...divideLineProps} />
       </Content>
+      <Footer />
     </main>
   );
 };
