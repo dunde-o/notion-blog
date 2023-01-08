@@ -1,3 +1,13 @@
+export type HttpMethod =
+  | "GET"
+  | "POST"
+  | "PUT"
+  | "PATCH"
+  | "DELETE"
+  | "HEAD"
+  | "OPTIONS"
+  | "TRACE";
+
 export interface HttpSuccessResponseForm<T> {
   success: true;
   path: string;
@@ -14,4 +24,6 @@ export interface HttpFailResponseForm {
   } & { [key: string]: string };
 }
 
-export type HttpResponseForm<T> = HttpSuccessResponseForm<T> | HttpFailResponseForm;
+export type HttpResponseForm<T> =
+  | HttpSuccessResponseForm<T>
+  | HttpFailResponseForm;
