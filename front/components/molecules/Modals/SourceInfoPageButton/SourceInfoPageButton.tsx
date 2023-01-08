@@ -18,33 +18,45 @@ const Page: React.FC = () => {
       <section className={styles.images}>
         <h1>이미지</h1>
         <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image {...IMG_SIZES.ICON} {...IMG_PROPS.CLOSE_X} />
           {linkComponent(
             "https://www.iconpacks.net/free-icon/close-cancel-10387.html"
           )}
         </div>
         <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image {...IMG_SIZES.ICON} {...IMG_PROPS.NOT_FOUND} />
           {linkComponent(
             "https://www.flaticon.com/free-icon/no-data_7466140?term=no+data&page=1&position=3&origin=tag&related_id=7466140"
           )}
         </div>
         <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image {...IMG_SIZES.ICON} {...IMG_PROPS.GITHUB} />
           {linkComponent(
             "https://www.flaticon.com/kr/free-icon/github-logo_25231"
           )}
         </div>
         <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image {...IMG_SIZES.ICON} {...IMG_PROPS.SAMPLE} />
           {linkComponent(
             "https://www.istockphoto.com/kr/%EC%82%AC%EC%A7%84/%EC%83%98%ED%94%8C-%EB%A0%88%EB%93%9C-%EA%B7%B8%EB%9F%B0%EC%A7%80-%EB%9D%BC%EC%9A%B4%EB%93%9C-%EC%8A%A4%ED%85%9C%ED%94%84-%ED%9D%B0%EC%83%89-%EB%B0%B0%EA%B2%BD%EC%9D%98-gm491520707-40120628"
           )}
         </div>
         <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image {...IMG_SIZES.ICON} {...IMG_PROPS.SETTING} />
           {linkComponent(
             "https://www.flaticon.com/free-icon/setting_2572691?term=setting&page=7&position=73&origin=search&related_id=2572691"
+          )}
+        </div>
+        <div>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <Image {...IMG_SIZES.ICON} {...IMG_PROPS.LOADING} />
+          {linkComponent(
+            "https://tenor.com/ko/view/loading-loading-forever-bobux-loader-gif-18368917"
           )}
         </div>
       </section>

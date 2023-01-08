@@ -23,6 +23,7 @@ export const IMG_INFOS = {
   SETTING: { fileName: "setting.png", description: "setting image" },
   GITHUB: { fileName: "github.png", description: "github icon image" },
   CLOSE_X: { fileName: "close_x.svg", description: "close button image" },
+  LOADING: { fileName: "loading.gif", description: "loading image" },
 };
 
 export const IMG_PATHS: Record<keyof typeof IMG_INFOS, string> = Object.entries(
