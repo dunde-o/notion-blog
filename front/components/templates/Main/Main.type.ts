@@ -1,6 +1,5 @@
-import { NotionPage } from "@local/shared/dist/types/models/notion";
+import { PostPreviewProps } from "@components/organisms/PostPreview/PostPreview.type";
 
-export interface MainProps {
+export interface MainProps extends PostPreviewProps {
   bannerMessage: string;
-  postData?: NotionPage[];
 }

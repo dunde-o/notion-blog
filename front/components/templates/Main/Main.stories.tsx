@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   bannerMessage: "banner message",
-  data: dummyNotionPages,
+  postData: dummyNotionPages,
 };
