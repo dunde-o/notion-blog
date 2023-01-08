@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof PostPreview> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  data: dummyNotionPages,
+  postData: dummyNotionPages,
 };
 
 export const BlankData = Template.bind({});
