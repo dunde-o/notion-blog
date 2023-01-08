@@ -6,7 +6,7 @@ import { Banner, Content, DivideLine } from "@components/atoms";
 import { DivideLineProps } from "@components/atoms/DivideLine/DivideLine.type";
 
 const Main: React.FC<MainProps> = (props) => {
-  const { bannerMessage, data } = props;
+  const { bannerMessage, postData } = props;
   const { navRef, navPosition, scrollHandler } = Navigator.useNavigatorScroll();
 
   const divideLineProps: DivideLineProps = {
@@ -21,7 +21,7 @@ const Main: React.FC<MainProps> = (props) => {
       <Content>
         <Banner message={bannerMessage} />
         <DivideLine {...divideLineProps} />
-        <PostPreview data={data} />
+        <PostPreview data={postData} />
         <DivideLine {...divideLineProps} />
       </Content>
       <Footer />
