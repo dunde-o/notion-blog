@@ -12,7 +12,7 @@
   height: 100vh;
   overflow-y: scroll;
 
-  & > * {
+  & > section {
     width: var(--screen--width);
   }
 }
