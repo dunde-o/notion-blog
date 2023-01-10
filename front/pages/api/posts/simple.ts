@@ -12,7 +12,7 @@ const execution: ExecutionType = {
     );
 
     res
-      .status(response.success ? 200 : Number(response.error.statusCode))
+      .status(response.success ? 200 : Number(response.error.statusCode ?? 400))
       .json(response.success ? response.data : response.error.message);
   },
 };
