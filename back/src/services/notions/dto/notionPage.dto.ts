@@ -21,15 +21,15 @@ export class NotionPageHead {
       title,
     }: {
       category?: Omit<SelectPropertyItemObjectResponse, 'object'>;
-      description?: Omit<RichTextPropertyItemObjectResponse, 'object'>;
+      description?: { rich_text: Pick<RichTextPropertyItemObjectResponse['rich_text'], 'plain_text'>[] };
       tag?: Omit<MultiSelectPropertyItemObjectResponse, 'object'>;
-      title?: Omit<TitlePropertyItemObjectResponse, 'object'>;
+      title?: { title: Pick<TitlePropertyItemObjectResponse['title'], 'plain_text'>[] };
     } = properties;
 
     this.category = category?.select.name ?? '';
-    this.description = description?.rich_text.plain_text ?? '';
+    this.description = description?.rich_text[0].plain_text ?? '';
     this.tag = tag?.multi_select.map((it) => it.name) ?? [];
-    this.title = title?.title.plain_text ?? '';
+    this.title = title?.title[0].plain_text ?? '';
   }
 }
 
