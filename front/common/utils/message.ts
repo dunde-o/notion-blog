@@ -13,6 +13,20 @@ export const objectToQueryString = (queryObject?: RequestType): string => {
   return isEmpty(query) ? "" : `?${query}`;
 };
 
+export const urlToQueryObject = (url?: string): RequestType => {
+  const [_, queries] = url?.split("?") ?? ["", ""];
+  const queryList = queries.split("&");
+  return queryList.reduce((obj, query) => {
+    const [key, value] = query.split("=");
+    return key == null || value == null
+      ? obj
+      : {
+          ...obj,
+          [key]: value,
+        };
+  }, {});
+};
+
 async function serverFetch<T>(
   url: UrlType,
   method: "GET",
