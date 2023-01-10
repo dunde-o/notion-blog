@@ -7,5 +7,7 @@ import { UseQueryOptions } from 'react-query';
 export const QUERY_OPTION = {
   DEFAULT: {
     refetchOnWindowFocus: false,
+    retry: 1,
+    retryDelay: 1000,
   },
 };
