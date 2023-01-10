@@ -1,0 +1,16 @@
+@import "~@common/styles/utils";
+
+.PostPreview {
+  --preview--row-gap: 20px;
+
+  @include flex(row, space-between, center);
+  flex-wrap: wrap;
+  row-gap: var(--preview--row-gap);
+  width: var(--screen--width);
+}
+
+@include mobile {
+  .PostPreview {
+    @include flex(row, center, center);
+  }
+}

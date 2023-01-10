@@ -1,0 +1,53 @@
+@import "~@common/styles/utils";
+
+.PostsRouterButton {
+  --posts-router-button--font-size: 20px;
+  --posts-router-button--white-space: 10px;
+
+  cursor: pointer;
+  font-family: KyoboHandwriting, sans-serif;
+  font-size: var(--posts-router-button--font-size);
+  color: var(--font-color_default);
+  margin: calc(var(--posts-router-button--white-space) / 2) var(--posts-router-button--white-space);
+
+  &:hover > .arrow::after {
+    --calc-translate: calc(var(--posts-router-button--white-space) / 2 * -1);
+    transform: translateX(var(--calc-translate));
+    opacity: 1;
+  }
+}
+
+.arrow {
+  position: relative;
+  color: inherit;
+  margin-left: var(--posts-router-button--white-space);
+
+  &::after {
+    content: '►';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+
+@include mobile {
+  .PostsRouterButton {
+    --posts-router-button--font-size: 20px;
+    --posts-router-button--white-space: 15px;
+  }
+}
+
+@include tablet {
+  .PostsRouterButton {
+    --posts-router-button--font-size: 20px;
+    --posts-router-button--white-space: 15px;
+  }
+}
+
+@include desktop {
+  .PostsRouterButton {
+    --posts-router-button--font-size: 30px;
+    --posts-router-button--white-space: 20px;
+  }
+}

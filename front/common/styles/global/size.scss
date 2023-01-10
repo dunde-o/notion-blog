@@ -1,0 +1,23 @@
+@import "../utils";
+@import "../variables";
+
+@include mobile {
+  :root {
+    --screen--width: #{$screen-mobile};
+    --navigator--height: 50px;
+  }
+}
+
+@include tablet {
+  :root {
+    --screen--width: #{$screen-tablet};
+    --navigator--height: 100px;
+  }
+}
+
+@include desktop {
+  :root {
+    --screen--width: #{$screen-desktop};
+    --navigator--height: 100px;
+  }
+}

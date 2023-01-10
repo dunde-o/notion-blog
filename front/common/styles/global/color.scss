@@ -1,0 +1,24 @@
+@import "../utils";
+@import "../variables";
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-mode: dark;
+    --font-color_default: #{$dark--font-color_default};
+    --background-color_default: #{$dark--background-color_default};
+    --background-color_gradiant: linear-gradient(45deg, #{$dark--background-color_gradiant-bottom}, #{$dark--background-color_gradiant-top})
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme-mode: light;
+    --font-color_default: #{$light--font-color_default};
+    --background-color_default: #{$light--background-color_default};
+    --background-color_gradiant: linear-gradient(45deg, #{$light--background-color_gradiant-bottom}, #{$light--background-color_gradiant-top});
+  }
+}
+
+html {
+  color-scheme: var(--theme-mode);
+}

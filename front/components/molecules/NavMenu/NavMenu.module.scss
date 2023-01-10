@@ -1,0 +1,28 @@
+@import "~@common/styles/utils";
+
+.NavMenu {
+  @include flex(row);
+  width: fit-content;
+  height: fit-content;
+}
+
+@include mobile {
+  .NavMenu {
+    font-size: 12px;
+    gap: 20px;
+  }
+}
+
+@include tablet {
+  .NavMenu {
+    font-size: 16px;
+    gap: 30px;
+  }
+}
+
+@include desktop {
+  .NavMenu {
+    font-size: 16px;
+    gap: 30px;
+  }
+}

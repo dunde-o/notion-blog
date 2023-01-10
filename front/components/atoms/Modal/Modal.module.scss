@@ -1,0 +1,88 @@
+@import "~@common/styles/utils";
+
+.Modal {
+  --modal--z-index: 100;
+  --font-color_default: black;
+
+  @include flex();
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--font-color_default);
+  z-index: var(--modal--z-index);
+  cursor: default;
+}
+
+.is-transparent {
+  background: transparent;
+}
+
+.inner {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+
+  & > .description {
+    overflow: scroll;
+    max-height: 60vh;
+    max-width: 60vw;
+
+    & > pre {
+      all: unset;
+      white-space: pre;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.head {
+  @include flex(row, flex-end, center);
+  gap: 25px;
+  font-size: 20px;
+  font-weight: bold;
+
+  & > .close-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    & > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+.foot {
+  @include flex(row, flex-end, center);
+  gap: 20px;
+
+  & > button {
+    cursor: pointer;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}

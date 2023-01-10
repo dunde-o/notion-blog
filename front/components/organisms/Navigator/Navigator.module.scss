@@ -1,0 +1,58 @@
+@import "~@common/styles/utils";
+
+.isAbsolute {
+  position: absolute;
+}
+
+.isFixed {
+  position: fixed;
+  backdrop-filter: blur(8px) invert(5%);
+}
+
+.Navigator {
+  top: 0;
+  box-sizing: border-box;
+  @include flex(row, space-between, center);
+
+  width: 100%;
+  height: var(--navigator--height);
+  border-bottom: 1px var(--font-color_default) solid;
+}
+
+.NavLeft, .NavRight {
+  @include flex(column, flex-end, center);
+  height: 100%;
+}
+
+@include mobile {
+  .Navigator {
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+
+  .NavLeft, .NavRight {
+    @include flex();
+  }
+}
+
+@include tablet {
+  .Navigator {
+    padding-left: 20px;
+    padding-right: 40px;
+  }
+
+  .NavLeft, .NavRight {
+    padding-bottom: 25px;
+  }
+}
+
+@include desktop {
+  .Navigator {
+    padding-left: 25px;
+    padding-right: 50px;
+  }
+
+  .NavLeft, .NavRight {
+    padding-bottom: 25px;
+  }
+}

@@ -1,0 +1,10 @@
+@import "../variables";
+
+@mixin font-mode {
+  &.dark {
+    color: $dark--font-color_default;
+  }
+  &.light {
+    color: $light--font-color_default;
+  }
+}

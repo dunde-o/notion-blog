@@ -1,0 +1,24 @@
+@import "@common/styles/utils";
+
+.TextLink {
+  @include flex();
+
+  color: var(--font-color_default);
+  overflow: hidden;
+  font-size: inherit;
+
+  @include font-mode;
+
+  &::after {
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}

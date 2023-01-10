@@ -1,0 +1,6 @@
+@import "~@common/styles/utils";
+
+.LoadingPreview {
+  @include flex();
+  width: 100%;
+}

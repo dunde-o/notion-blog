@@ -1,0 +1,46 @@
+@import "~@common/styles/utils";
+
+.BlankPreview {
+  --blank-preview--gap: 20px;
+  --blank-preview--font-size: 16px;
+  --blank-preview--image-size: 20px;
+
+  @include flex();
+  width: 100%;
+  gap: var(--blank-preview--gap);
+  font-family: BMJUA, sans-serif;
+  color: var(--font-color_default);
+}
+
+.message {
+  font-size: var(--blank-preview--font-size);
+}
+
+.image {
+  width: var(--blank-preview--image-size);
+  height: var(--blank-preview--image-size);
+}
+
+@include mobile {
+  .BlankPreview {
+    --blank-preview--gap: 20px;
+    --blank-preview--font-size: 20px;
+    --blank-preview--image-size: 30px;
+  }
+}
+
+@include tablet {
+  .BlankPreview {
+    --blank-preview--gap: 30px;
+    --blank-preview--font-size: 30px;
+    --blank-preview--image-size: 40px;
+  }
+}
+
+@include desktop {
+  .BlankPreview {
+    --blank-preview--gap: 40px;
+    --blank-preview--font-size: 40px;
+    --blank-preview--image-size: 50px;
+  }
+}

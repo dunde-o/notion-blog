@@ -1,0 +1,46 @@
+@import "@common/styles/utils";
+
+$font-size-sm: 15px;
+$font-size-lg: 30px;
+$width-sm: 85px;
+$width-lg: 165px;
+$height-sm: $font-size-sm + 5px;
+$height-lg: $font-size-lg + 5px;
+
+.Logo {
+  @include flex();
+
+  font-family: 'Jalnan', sans-serif;
+  font-weight: bolder;
+  font-size: $font-size-sm;
+  color: var(--font-color_default);
+  width: $width-sm;
+  height: $height-sm;
+  user-select: none;
+
+  @include font-mode;
+}
+
+@include mobile {
+  .Logo {
+    font-size: $font-size-sm;
+    width: $width-sm;
+    height: $height-sm;
+  }
+}
+
+@include tablet {
+  .Logo {
+    font-size: $font-size-lg;
+    width: $width-lg;
+    height: $height-lg;
+  }
+}
+
+@include desktop {
+  .Logo {
+    font-size: $font-size-lg;
+    width: $width-lg;
+    height: $height-lg;
+  }
+}
