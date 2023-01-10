@@ -10,6 +10,7 @@ useEnv();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { logger: winstonLogger });
+  app.enableCors({ origin: 'localhost', credentials: true });
   app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalInterceptors(new HttpInterceptor());
   setupSwagger(app);
