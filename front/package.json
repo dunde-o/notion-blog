@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:run": "next build && next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook s public"
+    "build-storybook": "build-storybook s public",
+    "prod": "next build && next start"
   },
   "dependencies": {
     "@types/node": "18.11.9",
