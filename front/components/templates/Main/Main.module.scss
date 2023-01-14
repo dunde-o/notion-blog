@@ -15,4 +15,6 @@
   & > section {
     width: var(--screen--width);
   }
+
+  @include custom-scrollbar;
 }

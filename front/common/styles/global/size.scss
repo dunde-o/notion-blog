@@ -1,6 +1,10 @@
 @import "../utils";
 @import "../variables";
 
+:root {
+  --scrollbar-width: #{$scrollbar-width};
+}
+
 @include mobile {
   :root {
     --screen--width: #{$screen-mobile};
