@@ -3,6 +3,7 @@
 .Main {
   display: block;
   position: relative;
+  cursor: default;
 
   @include flex(column, flex-start, center);
 
