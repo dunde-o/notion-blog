@@ -11,7 +11,7 @@
 
   &::after {
     content: '';
-    background-color: white;
+    background-color: var(--font-color_default);
     width: 100%;
     height: 1px;
     transform: scaleX(0);
