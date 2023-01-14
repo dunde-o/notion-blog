@@ -3,6 +3,7 @@
 .Main {
   display: block;
   position: relative;
+  cursor: default;
 
   @include flex(column, flex-start, center);
 
@@ -15,4 +16,6 @@
   & > section {
     width: var(--screen--width);
   }
+
+  @include custom-scrollbar;
 }

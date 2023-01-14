@@ -6,6 +6,7 @@
 
 .isFixed {
   position: fixed;
+  margin-right: var(--scrollbar-width);
   backdrop-filter: blur(8px) invert(5%);
 }
 
