@@ -28,4 +28,7 @@ jobs:
           password: ${{ secrets.REMOTE_SSH_PW }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm --help
             sh ~/scripts/deploy.sh
