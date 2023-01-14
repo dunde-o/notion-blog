@@ -25,7 +25,7 @@ jobs:
         with:
           host: ${{ secrets.REMOTE_IP }}
           username: ${{ secrets.REMOTE_SSH_ID }}
-          key: ${{ secrets.REMOTE_SSH_KEY }}
+          password: ${{ secrets.REMOTE_SSH_PW }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
             sh ~/scripts/deploy.sh
