@@ -2,8 +2,8 @@ import React from "react";
 import { PostCardProps } from "./PostCard.type";
 import styles from "./PostCard.module.scss";
 import { RouterButton } from "@components/atoms";
-import Image from "next/image";
 import { IMG_SIZES } from "@common/constants/image";
+import LoadingImage from "@components/atoms/LoadImage/LoadImage";
 
 const PostCard: React.FC<PostCardProps> = (props) => {
   const { path, data } = props;
@@ -11,7 +11,7 @@ const PostCard: React.FC<PostCardProps> = (props) => {
   return (
     <RouterButton path={path ?? pageLink}>
       <div className={styles.PostCard}>
-        <Image
+        <LoadingImage
           className={styles.image}
           src={iconImgUrl}
           alt={pageHead.title}
