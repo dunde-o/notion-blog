@@ -30,3 +30,13 @@ $ yarn start:back:dev
 $ yarn start:front
 $ yarn start:front:dev
 ```
+
+## Version
+
+### v0.1.0
+
+```text
+- Main 페이지만 제작되었습니다.
+- 배너, 네이게이터, 블로그 포스팅 정보 일부보기, 소스정보 보기 등의 기능이 있습니다.
+- 사용자 접속기기에 설정된 색상모드에 따라 페이지 색상이 변경되는 기능을 추가하였습니다.
+```
