@@ -1,0 +1,26 @@
+@import "~@common/styles/utils";
+
+.SwitchScreen {
+  position: fixed;
+}
+
+@include mobile {
+  .SwitchScreen {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@include tablet {
+  .SwitchScreen {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+@include desktop {
+  .SwitchScreen {
+    bottom: 50px;
+    right: 50px;
+  }
+}
