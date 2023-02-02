@@ -1,8 +1,7 @@
 import React, { useCallback, useLayoutEffect, useState } from "react";
-import Switch from "@components/atoms/Switch/Switch";
+import { Switch } from "@components/atoms";
 import { Mode } from "@common/types/mode";
 import { customLocalStorage, loadLocalStorage } from "@common/utils/storage";
-import "@common/styles/variables/_color.scss";
 import { changeColorPalette } from "@common/utils/color";
 
 const ScreenModeSwitch: React.FC = () => {
@@ -21,7 +20,6 @@ const ScreenModeSwitch: React.FC = () => {
     if (isSystemDark) {
       setScreenMode("dark");
     }
-    console.log(isSystemDark);
   }, []);
 
   const handleSwitchClick = useCallback(() => {
