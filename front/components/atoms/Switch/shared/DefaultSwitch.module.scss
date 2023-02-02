@@ -13,6 +13,7 @@
   border: var(--default-switch_border-thick) solid var(--font-color_default);
   border-radius: min(var(--default-switch_width), var(--default-switch_height));
   box-sizing: border-box;
+  backdrop-filter: blur(5px) brightness(150%);
   transition: border 0.3s ease-in-out;
 
   &::after {
