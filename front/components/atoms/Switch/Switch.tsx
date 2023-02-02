@@ -37,4 +37,4 @@ const Switch: React.FC<SwitchProps> = (props) => {
 
 Switch.displayName = "Switch";
 
-export default Switch;
+export default Object.assign(Switch, { DefaultSwitch });
