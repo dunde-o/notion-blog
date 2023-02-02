@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useLayoutEffect, useState } from "react";
 import styles from "./Switch.module.scss";
 import { SwitchProps } from "./Switch.type";
 import DefaultSwitch from "./shared/DefaultSwitch";
@@ -12,9 +12,11 @@ const Switch: React.FC<SwitchProps> = (props) => {
     commonAction,
     ...rest
   } = props;
-  const [switchState, setSwitchState] = useState(
-    defaultSwitchProps?.state ?? true
-  );
+  const [switchState, setSwitchState] = useState<boolean>(true);
+
+  useLayoutEffect(() => {
+    setSwitchState(defaultSwitchProps?.state ?? true);
+  }, [defaultSwitchProps?.state]);
 
   const handleButtonClick = useCallback(() => {
     switchState ? otherAction?.() : defaultAction?.();
