@@ -1,7 +1,12 @@
 import React from "react";
 import { MainProps } from "./Main.type";
 import styles from "./Main.module.scss";
-import { Footer, Navigator, PostPreview } from "@components/organisms";
+import {
+  Footer,
+  Navigator,
+  PostPreview,
+  SwitchScreen,
+} from "@components/organisms";
 import { Banner, Content, DivideLine } from "@components/atoms";
 import { DivideLineProps } from "@components/atoms/DivideLine/DivideLine.type";
 
@@ -18,6 +23,7 @@ const Main: React.FC<MainProps> = (props) => {
   return (
     <main onScroll={scrollHandler} className={styles.Main}>
       <Navigator ref={navRef} position={navPosition} />
+      <SwitchScreen />
       <Content>
         <Banner message={bannerMessage} />
         <DivideLine {...divideLineProps} />
