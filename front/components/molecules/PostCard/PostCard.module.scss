@@ -24,12 +24,16 @@
 .image {
   width: var(--card-image--size);
   height: var(--card-image--size);
+  border: var(--font-color_default) var(--card--border-size) solid;
+  border-radius: var(--card--radius);
+  box-sizing: border-box;
 }
 
 .info {
   @include flex(column, center, flex-start);
   gap: calc(var(--card--white-space) / 2);
   width: var(--card-info--width);
+  color: var(--font-color_default);
 }
 
 .title {

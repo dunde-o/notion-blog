@@ -1,24 +1,40 @@
 @import "../utils";
 @import "../variables";
 
+:root {
+  --dark--font-color_default: #{$dark--font-color_default};
+  --dark--background-color_default: #{$dark--background-color_default};
+  --dark--background-color_gradiant-bottom: #{$dark--background-color_gradiant-bottom};
+  --dark--background-color_gradiant-top: #{$dark--background-color_gradiant-top};
+  --dark--background-color_gradiant: linear-gradient(45deg, var(--dark--background-color_gradiant-bottom), var(--dark--background-color_gradiant-top));
+
+  --light--font-color_default: #{$light--font-color_default};
+  --light--background-color_default: #{$light--background-color_default};
+  --light--background-color_gradiant-bottom: #{$light--background-color_gradiant-bottom};
+  --light--background-color_gradiant-top: #{$light--background-color_gradiant-top};
+  --light--background-color_gradiant: linear-gradient(45deg, var(--light--background-color_gradiant-bottom), var(--light--background-color_gradiant-top));
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  html {
+    color-scheme: dark;
+  }
+  body {
     --theme-mode: dark;
-    --font-color_default: #{$dark--font-color_default};
-    --background-color_default: #{$dark--background-color_default};
-    --background-color_gradiant: linear-gradient(45deg, #{$dark--background-color_gradiant-bottom}, #{$dark--background-color_gradiant-top})
+    --font-color_default: var(--dark--font-color_default);
+    --background-color_default: var(--dark--background-color_default);
+    --background-color_gradiant: var(--dark--background-color_gradiant);
   }
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --theme-mode: light;
-    --font-color_default: #{$light--font-color_default};
-    --background-color_default: #{$light--background-color_default};
-    --background-color_gradiant: linear-gradient(45deg, #{$light--background-color_gradiant-bottom}, #{$light--background-color_gradiant-top});
+  html {
+    color-scheme: light;
   }
-}
-
-html {
-  color-scheme: var(--theme-mode);
+  body {
+    --theme-mode: light;
+    --font-color_default: var(--light--font-color_default);
+    --background-color_default: var(--light--background-color_default);
+    --background-color_gradiant: var(--light--background-color_gradiant);
+  }
 }
