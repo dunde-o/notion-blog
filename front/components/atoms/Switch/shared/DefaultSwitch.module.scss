@@ -46,7 +46,7 @@
   top: var(--default-switch_space);
   border-radius: var(--default-switch--cap_size);
   color: var(--font-color_default);
-  overflow-x: hidden;
+  overflow: hidden;
   transition: color 0.3s ease-in-out;
 }
 
