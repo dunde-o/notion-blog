@@ -1,0 +1,24 @@
+@import "~@common/styles/utils";
+
+.BlankPostList {
+  @include flex();
+  font-size: 10px;
+}
+
+@include mobile {
+  .BlankPostList {
+    font-size: 10px;
+  }
+}
+
+@include tablet {
+  .BlankPostList {
+    font-size: 20px;
+  }
+}
+
+@include desktop {
+  .BlankPostList {
+    font-size: 30px;
+  }
+}
