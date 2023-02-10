@@ -3,6 +3,8 @@
 .Content {
   --content--width: 'auto';
   --content--height: 'auto';
+
+  z-index: var(--content--z-index);
 }
 
 .vertical {

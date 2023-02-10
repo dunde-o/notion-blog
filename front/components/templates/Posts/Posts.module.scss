@@ -1,0 +1,23 @@
+@import "~@common/styles/utils";
+
+.Posts {
+  display: block;
+  position: relative;
+  cursor: default;
+  gap: 200px;
+
+  @include flex(column, flex-start, center);
+
+  padding-top: var(--navigator--height);
+  color: var(--font-color_default);
+  background: var(--background-color_gradiant);
+  height: 100vh;
+  overflow-y: scroll;
+
+  & > section {
+    width: var(--screen--width);
+    z-index: 0;
+  }
+
+  @include custom-scrollbar;
+}

@@ -5,5 +5,5 @@ export type ExecutionType = {
   [key in HttpMethod]?: (req: NextApiRequest, res: NextApiResponse) => void;
 };
 
-export type RequestType = { [key in string]: string | number | boolean };
+export type RequestType = { [key in string]: unknown };
 export type UrlType = string | { url: string; isServer?: boolean };

@@ -1,0 +1,41 @@
+@import "~@common/styles/utils";
+
+.PostList {
+  --post-list--gap: 20px;
+  --post-list_card--width: calc(var(--screen--width) / 4 - var(--post-list--gap) / 2);
+
+  width: 100%;
+}
+
+.title {
+  @include flex();
+  font-size: 50px;
+  font-weight: bold;
+  padding: 50px 0;
+}
+
+.container {
+  width: 100%;
+
+  & > * {
+    width: var(--post-list_card--width);
+  }
+}
+
+@include mobile {
+  .PostList {
+    --post-list_card--width: calc(var(--screen--width) - var(--post-list--gap) / 2);
+  }
+}
+
+@include tablet {
+  .PostList {
+    --post-list_card--width: calc(var(--screen--width) / 3 - var(--post-list--gap) / 2);
+  }
+}
+
+@include desktop {
+  .PostList {
+    --post-list_card--width: calc(var(--screen--width) / 4 - var(--post-list--gap) / 2);
+  }
+}
