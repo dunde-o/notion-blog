@@ -3,16 +3,32 @@
 .PostCard {
   --card--border-size: 1px;
 
-  --card--gap: 10px;
-  --card--white-space: 10px;
-  --card--radius: 10px;
-  --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
-  --card-image--size: 50px;
-  --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
-  --card-info-title--font-size: 22px;
-  --card-info-description--font-size: 15px;
+  &.simple {
+    --card--gap: 10px;
+    --card--white-space: 10px;
+    --card--radius: 10px;
+    --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
+    --card-image--size: 50px;
+    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
+    --card-info-title--font-size: 22px;
+    --card-info-description--font-size: 15px;
 
-  @include flex(row, flex-start, center);
+    @include flex(row, flex-start, center);
+  }
+
+  &.detail {
+    --card--gap: 10px;
+    --card--white-space: 10px;
+    --card--radius: 10px;
+    --card--width: 100%;
+    --card-image--size: 100%;
+    --card-info--width: 100%;
+    --card-info-title--font-size: 22px;
+    --card-info-description--font-size: 15px;
+
+    @include flex();
+  }
+
   box-sizing: border-box;
   border: var(--font-color_default) var(--card--border-size) solid;
   gap: var(--card--white-space);
@@ -30,60 +46,81 @@
 }
 
 .info {
-  @include flex(column, center, flex-start);
   gap: calc(var(--card--white-space) / 2);
   width: var(--card-info--width);
   color: var(--font-color_default);
 }
 
+.simple .info {
+  @include flex(column, center, flex-start);
+
+  .title, .description {
+    @include ellipsis();
+  }
+}
+
+.detail .info {
+  @include flex();
+  position: relative;
+
+  .title {
+    @include ellipsis();
+  }
+
+  .title, .description {
+    word-break: keep-all;
+    text-align: center;
+    width: 100%;
+  }
+}
+
 .title {
-  @include ellipsis();
   font-family: 'BMJUA', sans-serif;
   font-size: var(--card-info-title--font-size);
   border-bottom: var(--font-color_default) 1px solid;
 }
 
 .description {
-  @include ellipsis();
   font-family: 'KyoboHandwriting', sans-serif;
   font-size: var(--card-info-description--font-size);
 }
 
+.type {
+  @include flex();
+  gap: 8px;
+  padding-bottom: 10px;
+
+  .category {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .tags {
+    row-gap: 3px;
+    column-gap: 10px;
+    font-size: 13px;
+  }
+
+  .category, .tags {
+    @include flex(row);
+    flex-wrap: wrap;
+  }
+}
+
 @include mobile {
-  .PostCard {
-    --card--gap: 10px;
-    --card--white-space: 10px;
-    --card--radius: 10px;
+  .PostCard.simple {
     --card--width: calc(var(--screen--width) - var(--card--gap));
-    --card-image--size: 50px;
-    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
-    --card-info-title--font-size: 22px;
-    --card-info-description--font-size: 15px;
   }
 }
 
 @include tablet {
-  .PostCard {
-    --card--gap: 10px;
-    --card--white-space: 10px;
-    --card--radius: 10px;
+  .PostCard.simple {
     --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
-    --card-image--size: 50px;
-    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
-    --card-info-title--font-size: 22px;
-    --card-info-description--font-size: 15px;
   }
 }
 
 @include desktop {
-  .PostCard {
-    --card--gap: 10px;
-    --card--white-space: 10px;
-    --card--radius: 10px;
+  .PostCard.simple {
     --card--width: calc(var(--screen--width) / 2 - var(--card--gap));
-    --card-image--size: 50px;
-    --card-info--width: calc(var(--card--width) - var(--card-image--size) - var(--card--white-space) * 3 - var(--card--border-size) * 2);
-    --card-info-title--font-size: 22px;
-    --card-info-description--font-size: 15px;
   }
 }
