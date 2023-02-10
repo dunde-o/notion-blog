@@ -1,7 +1,6 @@
 @import "~@common/styles/utils";
 
 .Modal {
-  --modal--z-index: 100;
   --font-color_default: black;
 
   @include flex();
