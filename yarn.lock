@@ -2093,6 +2093,46 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@egjs/children-differ@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@egjs/children-differ/-/children-differ-1.0.1.tgz#5465fa80671d5ca3564ebe912f48b05b3e8a14fd"
+  integrity sha512-DRvyqMf+CPCOzAopQKHtW+X8iN6Hy6SFol+/7zCUiE5y4P/OB8JP8FtU4NxtZwtafvSL4faD5KoQYPj3JHzPFQ==
+  dependencies:
+    "@egjs/list-differ" "^1.0.0"
+
+"@egjs/component@^3.0.0", "@egjs/component@^3.0.1":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@egjs/component/-/component-3.0.4.tgz#ad7b53794b2a612806179a188ad828acb9525f61"
+  integrity sha512-sXA7bGbIeLF2OAw/vpka66c6QBBUPcA4UUhR4WGJfnp2XWdiI8QrnJGJMr/UxpE/xnevX9tN3jvNPlW8WkHl3g==
+
+"@egjs/grid@~1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@egjs/grid/-/grid-1.12.0.tgz#0e83eb20ecc43e149f4d144bab84d23fbc9687df"
+  integrity sha512-LKUgbDE0Dr1Nq2V+DPrf3CNaQb/f3ELFX9V+23QlBxBdvcb7HqnywNjDfUoQ7fEdyiTfIg55r9vHl8v9B/WXJw==
+  dependencies:
+    "@egjs/children-differ" "^1.0.1"
+    "@egjs/component" "^3.0.0"
+    "@egjs/imready" "^1.3.0"
+
+"@egjs/imready@^1.3.0":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@egjs/imready/-/imready-1.3.1.tgz#00d6008a07a0ae7eb1865e7aedcedb964c60c567"
+  integrity sha512-ReDNST6BEt65lApC4e241jZjexKPn1FvtDEIctuJ/I4uHG6Qm9KBVrHiZhLcPCRYAQPkYkphP/0v8nAVzT69qw==
+  dependencies:
+    "@egjs/component" "^3.0.1"
+
+"@egjs/list-differ@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@egjs/list-differ/-/list-differ-1.0.0.tgz#2277aff52e3e4bd9318d5c30ffc3ba3b6216f05e"
+  integrity sha512-HsbMKc0ZAQH+EUeCmI/2PvTYSybmkaWwakU8QGDYYgMVIg9BQ5sM0A0Nnombjxo2+JzXHxmH+jw//yGX+y6GYw==
+
+"@egjs/react-grid@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@egjs/react-grid/-/react-grid-1.13.0.tgz#6e7c03a1ca832e9b462b3095128dde16db318136"
+  integrity sha512-Neq20yPud70r2ryBWhqURao/GEgdSOMt1qbRog4/BydZ4hgrFJfboQYH1dYydhmip8xJdwwy0FbRyrDOMQ08XA==
+  dependencies:
+    "@egjs/grid" "~1.12.0"
+
 "@eslint/eslintrc@^1.3.3":
   version "1.3.3"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.3.3.tgz"
@@ -2686,10 +2726,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notionhq/client@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.npmjs.org/@notionhq/client/-/client-2.2.2.tgz"
-  integrity sha512-L7TB+UyhnWTSv1ek7xzGr9+mS9o76qMKnZ8Ag8H2q6QgvywAiPOFcE3ulWI/1AnMewGVRqwb30agPHMVRY/K/w==
+"@notionhq/client@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-2.2.3.tgz#b8563994fd116123b0b2e39fca43a593faaf8360"
+  integrity sha512-ZqUzY0iRg/LIrwS+wzz/6osSB2nxIpmqdAtdUwzpcimc9Jlu1j85FeYdaU26Shr193CFrl2TLFeKqpk/APRQ4g==
   dependencies:
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
