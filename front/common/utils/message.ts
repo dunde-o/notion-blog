@@ -4,10 +4,17 @@ import {
   HttpMethod,
   HttpResponseForm,
 } from "@local/shared/dist/types/message/http";
+import { clearEmptyObject } from "@common/utils/parsing";
 
-export const objectToQueryString = (queryObject?: RequestType): string => {
+export const objectToQueryString = (
+  queryObject?: RequestType,
+  option?: { nullable?: boolean }
+): string => {
   if (queryObject == null) return "";
-  const query = Object.entries(queryObject)
+  const { nullable = false } = option ?? {};
+  const query = Object.entries(
+    nullable ? queryObject : clearEmptyObject(queryObject)
+  )
     .reduce<string[]>((arr, [key, value]) => [...arr, `${key}=${value}`], [])
     .join("&");
   return isEmpty(query) ? "" : `?${query}`;
@@ -15,7 +22,7 @@ export const objectToQueryString = (queryObject?: RequestType): string => {
 
 export const urlToQueryObject = (url?: string): RequestType => {
   const [_, queries] = url?.split("?") ?? ["", ""];
-  const queryList = queries.split("&");
+  const queryList = queries?.split("&") ?? [];
   return queryList.reduce((obj, query) => {
     const [key, value] = query.split("=");
     return key == null || value == null

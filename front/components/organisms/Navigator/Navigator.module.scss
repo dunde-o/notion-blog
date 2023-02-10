@@ -1,15 +1,5 @@
 @import "~@common/styles/utils";
 
-.isAbsolute {
-  position: absolute;
-}
-
-.isFixed {
-  position: fixed;
-  margin-right: var(--scrollbar-width);
-  backdrop-filter: blur(8px) invert(5%);
-}
-
 .Navigator {
   top: 0;
   box-sizing: border-box;
@@ -18,6 +8,17 @@
   width: 100%;
   height: var(--navigator--height);
   border-bottom: 1px var(--font-color_default) solid;
+  z-index: var(--navigator--z-index);
+}
+
+.isAbsolute {
+  position: absolute;
+}
+
+.isFixed {
+  position: fixed;
+  margin-right: var(--scrollbar-width);
+  backdrop-filter: blur(8px) invert(5%);
 }
 
 .NavLeft, .NavRight {

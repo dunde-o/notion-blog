@@ -15,5 +15,12 @@ const Template: ComponentStory<typeof PostCard> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   path: "/",
-  data: dummyNotionPages[0],
+  data: dummyNotionPages[5],
+};
+
+export const Detail = Template.bind({});
+Detail.args = {
+  path: "/",
+  data: dummyNotionPages[5],
+  type: "detail",
 };
