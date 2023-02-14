@@ -6,12 +6,32 @@ import { HttpFailResponseForm } from '@local/shared/dist/types/message/http';
 
 @Injectable()
 export class NotionsService {
-  async getAllNotionPage(nextCursor?: string): Promise<NotionResponseDto> {
+  async getNotionPage(nextCursor?: string, tag?: string | string[], category?: string): Promise<NotionResponseDto> {
     let response: QueryDatabaseResponse;
+    const filter = {
+      and: [
+        ...(tag != null
+          ? typeof tag === 'string'
+            ? [
+                {
+                  property: 'tag',
+                  multi_select: {
+                    contains: tag,
+                  },
+                },
+              ]
+            : tag.map((value) => ({ property: 'tag', multi_select: { contains: value } }))
+          : []),
+        ...(category != null ? [{ property: 'category', select: { equals: category } }] : []),
+      ],
+    };
+
     try {
       response = await notionClient.databases.query({
         database_id: notionSecret.NOTION_DATABASE_ID,
         start_cursor: nextCursor,
+        page_size: 10,
+        filter,
       });
     } catch (error: unknown) {
       throw new HttpException(
