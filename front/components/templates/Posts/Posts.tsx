@@ -8,9 +8,15 @@ import {
 } from "@components/organisms";
 import { Content, ScreenObserver } from "@components/atoms";
 import { PostsProps } from "./Posts.type";
+import { usePostData } from "./shared/utils";
 
 const Posts: React.FC<PostsProps> = (props) => {
-  const { postData, isLoading = false, requestPostData } = props;
+  const {
+    postData,
+    isLoading = false,
+    isFetching = false,
+    requestNextPostData,
+  } = props;
   const { navRef, navPosition, scrollHandler } = Navigator.useNavigatorScroll();
 
   return (
@@ -18,8 +24,15 @@ const Posts: React.FC<PostsProps> = (props) => {
       <Navigator ref={navRef} position={navPosition}></Navigator>
       <SwitchScreen />
       <Content>
-        <PostList postData={postData} isLoading={isLoading} />
-        <ScreenObserver onInScreen={requestPostData} isLoading={isLoading} />
+        <PostList
+          postData={postData}
+          isLoading={isLoading}
+          isFetching={isFetching}
+        />
+        <ScreenObserver
+          onInScreen={requestNextPostData}
+          wait={isLoading || isFetching}
+        />
       </Content>
       <Footer />
     </main>
@@ -28,4 +41,4 @@ const Posts: React.FC<PostsProps> = (props) => {
 
 Posts.displayName = "Posts";
 
-export default Posts;
+export default Object.assign(Posts, { usePostData });
