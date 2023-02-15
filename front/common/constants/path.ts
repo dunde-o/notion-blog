@@ -1,7 +1,7 @@
 export const PATH = {
   MAIN: "/",
-  POSTS: "posts/",
-  PROFILE: "profile/",
+  POSTS: "/posts",
+  PROFILE: "/profile",
 };
 
 export const DEFAULT_PATH = PATH.MAIN;

@@ -6,7 +6,7 @@ import { PostCard } from "@components/molecules";
 import { MasonryGrid } from "@egjs/react-grid";
 
 const PostList: React.FC<PostListProps> = (props) => {
-  const { postData, isLoading } = props;
+  const { postData, isLoading = false, isFetching = false } = props;
 
   const wrapComponent = (child: ReactNode) => (
     <article className={styles.PostList}>
@@ -20,16 +20,19 @@ const PostList: React.FC<PostListProps> = (props) => {
   }
 
   return wrapComponent(
-    <MasonryGrid
-      className={styles.container}
-      align="center"
-      gap={20}
-      defaultDirection="end"
-    >
-      {postData.map((data, index) => (
-        <PostCard data={data} type="detail" key={index} />
-      ))}
-    </MasonryGrid>
+    <>
+      <MasonryGrid
+        className={styles.container}
+        align="center"
+        gap={20}
+        defaultDirection="end"
+      >
+        {postData.map((data, index) => (
+          <PostCard data={data} type="detail" key={index} />
+        ))}
+      </MasonryGrid>
+      {isFetching ? <BlankPostList isLoading={true} /> : null}
+    </>
   );
 };
 

@@ -1,19 +1,25 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { NotionsService } from '@services/notions/notions.service';
 import { NotionResponseDto } from '@services/notions/dto/notionResponse.dto';
-import { ApiImplicitQuery } from '@nestjs/swagger/dist/decorators/api-implicit-query.decorator';
+import { ApiQuery } from '@nestjs/swagger';
 
 @Controller('notions')
 export class NotionsController {
   constructor(private readonly notionsService: NotionsService) {}
 
   @Get()
-  @ApiImplicitQuery({
+  @ApiQuery({
     name: 'nextCursor',
     required: false,
     type: String,
   })
-  getAllNotionPage(@Query('nextCursor') nextCursor?: string): Promise<NotionResponseDto> {
-    return this.notionsService.getAllNotionPage(nextCursor);
+  @ApiQuery({ name: 'tag', required: false, type: String || Array })
+  @ApiQuery({ name: 'category', required: false, type: String })
+  getNotionPage(
+    @Query('nextCursor') nextCursor?: string,
+    @Query('tag') tag?: string | string[],
+    @Query('category') category?: string,
+  ): Promise<NotionResponseDto> {
+    return this.notionsService.getNotionPage(nextCursor, tag, category);
   }
 }

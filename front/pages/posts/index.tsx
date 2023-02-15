@@ -1,49 +1,18 @@
-import React, { useCallback, useLayoutEffect, useState } from "react";
+import React from "react";
 import { Posts } from "@components/templates";
-import { useQuery } from "react-query";
-import { clientFetch } from "@common/utils/message";
-import {
-  NotionPage,
-  NotionPages,
-} from "@local/shared/dist/types/models/notion";
-import { QUERY_OPTION } from "@common/api/const";
+import { useRouter } from "next/router";
 
 const PostsPage: React.FC = () => {
-  const [postData, setPostData] = useState<NotionPage[]>([]);
-  const [notionPageInfo, setNotionPageInfo] = useState<
-    Pick<NotionPages, "nextCursor" | "hasMore">
-  >({
-    nextCursor: undefined,
-    hasMore: false,
-  });
-
-  const { isLoading, data, refetch } = useQuery(
-    "PostPreview",
-    () =>
-      clientFetch<NotionPages>("api/posts", "GET", {
-        param: { nextCursor: notionPageInfo.nextCursor },
-      }),
-    QUERY_OPTION.DEFAULT
-  );
-
-  useLayoutEffect(() => {
-    if (data?.results == null) {
-      return;
-    }
-    const { results, hasMore, nextCursor } = data;
-    setPostData((state) => [...state, ...results]);
-    setNotionPageInfo({ hasMore, nextCursor });
-  }, [data]);
-
-  const requestPostData = useCallback(() => {
-    notionPageInfo.hasMore ? refetch() : null;
-  }, [notionPageInfo, refetch]);
+  const { query } = useRouter();
+  const { postData, isLoading, isFetching, requestNextPostData } =
+    Posts.usePostData(query);
 
   return (
     <Posts
       postData={postData}
       isLoading={isLoading}
-      requestPostData={requestPostData}
+      isFetching={isFetching}
+      requestNextPostData={requestNextPostData}
     />
   );
 };
