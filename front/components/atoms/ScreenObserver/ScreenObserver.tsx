@@ -2,7 +2,7 @@ import React, { createRef, useLayoutEffect } from "react";
 import { ScreenObserverProps } from "./ScreenObserver.type";
 
 const ScreenObserver: React.FC<ScreenObserverProps> = (props) => {
-  const { onInScreen, onOutScreen, isLoading = false } = props;
+  const { onInScreen, onOutScreen, wait = false } = props;
   const ref = createRef<HTMLDivElement>();
 
   useLayoutEffect(() => {
@@ -10,7 +10,7 @@ const ScreenObserver: React.FC<ScreenObserverProps> = (props) => {
     if (ref.current != null) {
       observer = new IntersectionObserver(
         async (entries, _observer) => {
-          if (isLoading) {
+          if (wait) {
             return;
           }
           const [entry] = entries;
@@ -31,7 +31,7 @@ const ScreenObserver: React.FC<ScreenObserverProps> = (props) => {
         observer.disconnect();
       }
     };
-  }, [ref, isLoading, onInScreen, onOutScreen]);
+  }, [ref, wait, onInScreen, onOutScreen]);
   return <div ref={ref} />;
 };
 

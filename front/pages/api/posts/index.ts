@@ -2,14 +2,14 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { NotionPages } from "@local/shared/dist/types/models/notion";
 import { ExecutionType } from "@common/api/type";
 import { executeHttpMethod } from "@common/api/util";
-import { serverFetch, urlToQueryObject } from "@common/utils/message";
+import { serverFetch } from "@common/utils/message";
 
 const execution: ExecutionType = {
   GET: async (req, res) => {
     const response = await serverFetch<NotionPages>(
       { url: "/notions", isServer: true },
       "GET",
-      { param: urlToQueryObject(req.url) }
+      { param: req.query }
     );
 
     res
