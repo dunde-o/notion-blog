@@ -7,7 +7,6 @@ import LoadingImage from "@components/atoms/LoadImage/LoadImage";
 import classNames from "classnames";
 import { useRouter } from "next/router";
 import { PATH } from "@common/constants/path";
-import { objectToQueryString } from "@common/utils/message";
 
 const PostCard: React.FC<PostCardProps> = (props) => {
   const { path, data, type = "simple" } = props;
@@ -16,7 +15,7 @@ const PostCard: React.FC<PostCardProps> = (props) => {
   const createHandleTypeClick =
     (type: "category" | "tag", value: string) => (e: React.MouseEvent) => {
       e.stopPropagation();
-      router.push(PATH.POSTS + objectToQueryString({ [type]: value }));
+      router.push({ pathname: PATH.POSTS, query: { [type]: value } });
     };
   return (
     <RouterButton path={path ?? pageLink}>
@@ -42,7 +41,7 @@ const PostCard: React.FC<PostCardProps> = (props) => {
                   <div
                     onClick={createHandleTypeClick("tag", tag)}
                     key={index}
-                    className={styles.tag}
+                    className={styles.tags}
                   >
                     {tag}
                   </div>
