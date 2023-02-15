@@ -20,7 +20,6 @@ export class NotionsController {
     @Query('tag') tag?: string | string[],
     @Query('category') category?: string,
   ): Promise<NotionResponseDto> {
-    console.log(nextCursor, tag, category);
     return this.notionsService.getNotionPage(nextCursor, tag, category);
   }
 }
