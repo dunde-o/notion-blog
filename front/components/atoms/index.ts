@@ -7,3 +7,4 @@ export { default as RouterButton } from "./RouterButton/RouterButton";
 export { default as ScreenObserver } from "./ScreenObserver/ScreenObserver";
 export { default as Switch } from "./Switch/Switch";
 export { default as TextLink } from "./TextLink/TextLink";
+export { default as TextList } from "./TextList/TextList";

@@ -24,6 +24,7 @@ const Posts: React.FC<PostsProps> = (props) => {
       <Navigator ref={navRef} position={navPosition}></Navigator>
       <SwitchScreen />
       <Content>
+        <Content.ContentTitle title="POST" />
         <PostList
           postData={postData}
           isLoading={isLoading}

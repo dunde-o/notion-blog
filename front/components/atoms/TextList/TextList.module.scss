@@ -1,0 +1,23 @@
+@import "~@common/styles/utils";
+
+.TextList {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    @include flex(row, start, start);
+  }
+}
+
+.text-key {
+  min-width: fit-content;
+  font-weight: bold;
+  word-break: keep-all;
+  white-space: pre-wrap;
+}
+
+.text-value {
+  width: auto;
+  font-weight: normal;
+  word-break: keep-all;
+}
