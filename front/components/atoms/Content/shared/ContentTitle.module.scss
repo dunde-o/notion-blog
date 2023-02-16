@@ -1,0 +1,8 @@
+@import "~@common/styles/utils";
+
+.ContentTitle {
+  @include flex();
+  font-size: 50px;
+  font-weight: bold;
+  padding: 50px 0;
+}

@@ -9,10 +9,7 @@ const PostList: React.FC<PostListProps> = (props) => {
   const { postData, isLoading = false, isFetching = false } = props;
 
   const wrapComponent = (child: ReactNode) => (
-    <article className={styles.PostList}>
-      <span className={styles.title}>POST</span>
-      {child}
-    </article>
+    <article className={styles.PostList}>{child}</article>
   );
 
   if (postData == null || postData.length === 0 || isLoading) {
