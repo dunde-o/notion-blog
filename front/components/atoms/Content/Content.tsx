@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import { ContentProps } from "./Content.type";
 import styles from "./Content.module.scss";
 import classNames from "classnames";
+import ContentTitle from "./shared/ContentTitle";
 
 const Content: React.FC<ContentProps> = (props) => {
   const { direction = "vertical", size, children, className, ...rest } = props;
@@ -26,4 +27,4 @@ const Content: React.FC<ContentProps> = (props) => {
 
 Content.displayName = "Content";
 
-export default Content;
+export default Object.assign(Content, { ContentTitle });
