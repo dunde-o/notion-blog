@@ -1,0 +1,54 @@
+@import "~@common/styles/utils";
+
+.ProfileContent {
+  @include flex();
+  gap: max(calc(var(--screen--width) / 15), 20px);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--font-color_default);
+  border-radius: 10px;
+}
+
+.text-list {
+  --text-list--font-size: 12px;
+  font-size: var(--text-list--font-size);
+  line-height: calc(var(--text-list--font-size) * 1.5);
+}
+
+@include mobile {
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-width: 2px;
+  }
+  .text-list {
+    --text-list--font-size: 15px;
+  }
+}
+
+@include tablet {
+  .profile-image {
+    width: 300px;
+    height: 300px;
+    border-width: 3px;
+    border-radius: 15px;
+  }
+  .text-list {
+    --text-list--font-size: 20px;
+  }
+}
+
+@include desktop {
+  .profile-image {
+    width: 500px;
+    height: 500px;
+    border-width: 5px;
+    border-radius: 20px;
+  }
+  .text-list {
+    --text-list--font-size: 25px;
+  }
+}
