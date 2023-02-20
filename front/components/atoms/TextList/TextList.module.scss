@@ -5,7 +5,7 @@
   padding-left: 0;
 
   li {
-    @include flex(row, start, start);
+    @include flex(row, flex-start, flex-start);
   }
 }
 

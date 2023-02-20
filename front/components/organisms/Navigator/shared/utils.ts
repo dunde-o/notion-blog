@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { NavigatorProps } from '../Navigator.type';
 
 /**
@@ -26,7 +26,7 @@ export const useNavigatorScroll = () => {
     [navHeight]
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setNavHeight(navRef.current?.offsetHeight ?? Infinity);
   }, [navRef]);
 
