@@ -1,11 +1,11 @@
-import React, { createRef, useLayoutEffect } from "react";
+import React, { createRef, useEffect } from "react";
 import { ScreenObserverProps } from "./ScreenObserver.type";
 
 const ScreenObserver: React.FC<ScreenObserverProps> = (props) => {
   const { onInScreen, onOutScreen, wait = false } = props;
   const ref = createRef<HTMLDivElement>();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let observer: IntersectionObserver;
     if (ref.current != null) {
       observer = new IntersectionObserver(

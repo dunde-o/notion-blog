@@ -2,6 +2,7 @@
 
 .SwitchScreen {
   position: fixed;
+  z-index: var(--switch-screen--z-index);
 }
 
 @include mobile {

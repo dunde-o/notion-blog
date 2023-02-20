@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./Switch.module.scss";
 import { SwitchProps } from "./Switch.type";
 import DefaultSwitch from "./shared/DefaultSwitch";
@@ -14,7 +14,7 @@ const Switch: React.FC<SwitchProps> = (props) => {
   } = props;
   const [switchState, setSwitchState] = useState<boolean>(true);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setSwitchState(defaultSwitchProps?.state ?? true);
   }, [defaultSwitchProps?.state]);
 
