@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Switch } from "@components/atoms";
 import { Mode } from "@common/types/mode";
 import { customLocalStorage, loadLocalStorage } from "@common/utils/storage";
@@ -7,7 +7,7 @@ import { changeColorPalette } from "@common/utils/color";
 const ScreenModeSwitch: React.FC = () => {
   const [screenMode, setScreenMode] = useState<Mode>("light");
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const cachedMode = customLocalStorage.get("mode");
     if (cachedMode != null) {
       setScreenMode(cachedMode);
