@@ -1,16 +1,25 @@
 import { RequestType } from "@common/api/type";
-import { useInfiniteQuery } from "react-query";
-import { getQueryKey } from "@common/api/util";
+import { InfiniteData, useInfiniteQuery } from "react-query";
 import { clientFetch } from "@common/utils/message";
 import {
   NotionPage,
   NotionPages,
 } from "@local/shared/dist/types/models/notion";
-import { QUERY_OPTION } from "@common/api/const";
 import { useCallback } from "react";
 
+export const parsingInfinitePostData = (
+  infinitePostData: InfiniteData<NotionPages | undefined> | undefined
+): NotionPage[] => {
+  return (
+    infinitePostData?.pages?.reduce(
+      (list, current) => [...list, ...(current?.results ?? [])],
+      [] as NotionPage[]
+    ) ?? []
+  );
+};
+
 export const usePostData = (query?: RequestType) => {
-  const queryKey = getQueryKey("Posts", query);
+  const queryKey = ["Posts", query];
 
   const { isLoading, isFetching, data, fetchNextPage } = useInfiniteQuery(
     queryKey,
@@ -19,7 +28,6 @@ export const usePostData = (query?: RequestType) => {
         param: { nextCursor, ...query },
       }),
     {
-      ...QUERY_OPTION.DEFAULT,
       getNextPageParam: (lastPage) => {
         return lastPage?.nextCursor;
       },
@@ -39,10 +47,7 @@ export const usePostData = (query?: RequestType) => {
   }, [isLoading, isFetching, data, fetchNextPage]);
 
   return {
-    postData: data?.pages.reduce(
-      (list, current) => [...list, ...(current?.results ?? [])],
-      [] as NotionPage[]
-    ),
+    postData: parsingInfinitePostData(data),
     isLoading,
     isFetching,
     requestNextPostData,
