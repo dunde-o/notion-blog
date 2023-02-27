@@ -7,7 +7,11 @@ import { UseQueryOptions } from 'react-query';
 export const QUERY_OPTION = {
   DEFAULT: {
     refetchOnWindowFocus: false,
-    retry: 1,
-    retryDelay: 1000,
+    refetchOnMount: false,
+    retry: 0,
+  },
+  CACHE: {
+    staleTime: 1000 * 60 * 5,
+    cacheTime: 1000 * 60 * 5,
   },
 };

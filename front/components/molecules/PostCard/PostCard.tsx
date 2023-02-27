@@ -5,18 +5,13 @@ import { RouterButton } from "@components/atoms";
 import { IMG_SIZES } from "@common/constants/image";
 import LoadingImage from "@components/atoms/LoadImage/LoadImage";
 import classNames from "classnames";
-import { useRouter } from "next/router";
 import { PATH } from "@common/constants/path";
+import Link from "next/link";
 
 const PostCard: React.FC<PostCardProps> = (props) => {
   const { path, data, type = "simple" } = props;
   const { iconImgUrl, pageHead, pageLink } = data;
-  const router = useRouter();
-  const createHandleTypeClick =
-    (type: "category" | "tag", value: string) => (e: React.MouseEvent) => {
-      e.stopPropagation();
-      router.push({ pathname: PATH.POSTS, query: { [type]: value } });
-    };
+
   return (
     <RouterButton path={path ?? pageLink}>
       <div className={classNames(styles.PostCard, styles[type])}>
@@ -30,21 +25,26 @@ const PostCard: React.FC<PostCardProps> = (props) => {
           <span className={styles.title}>{pageHead.title}</span>
           {type === "simple" ? null : (
             <div className={styles.type}>
-              <div
-                onClick={createHandleTypeClick("category", pageHead.category)}
+              <Link
+                onClick={(e) => e.stopPropagation()}
+                href={{
+                  pathname: PATH.POSTS,
+                  query: { category: pageHead.category },
+                }}
                 className={styles.category}
               >
                 {pageHead.category}
-              </div>
+              </Link>
               <div className={styles.tags}>
                 {pageHead.tag.map((tag, index) => (
-                  <div
-                    onClick={createHandleTypeClick("tag", tag)}
+                  <Link
+                    onClick={(e) => e.stopPropagation()}
+                    href={{ pathname: PATH.POSTS, query: { tag } }}
                     key={index}
                     className={styles.tags}
                   >
                     {tag}
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
