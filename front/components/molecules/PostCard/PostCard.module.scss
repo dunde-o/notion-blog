@@ -21,7 +21,7 @@
     --card--white-space: 10px;
     --card--radius: 10px;
     --card--width: 100%;
-    --card-image--size: 100%;
+    --card-image--size: calc(var(--post-list_card--width) - var(--card--gap) * 2);
     --card-info--width: 100%;
     --card-info-title--font-size: 22px;
     --card-info-description--font-size: 15px;
